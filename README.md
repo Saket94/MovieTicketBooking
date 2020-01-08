@@ -35,11 +35,11 @@ To enable the send email feature so that user get the confirmation mail after bo
 
 1. Go to "Web.config" page in the "MovieTicketBooking" project solution and add the below parameters in it :-
 
-  a. Add the value of "senderEmailId" to assign the sender email address.
+    a. Add the value of "senderEmailId" to assign the sender email address.
   
-  b. Add the value of "senderEmailPassword" to assign the sender email address valid password.
+    b. Add the value of "senderEmailPassword" to assign the sender email address valid password.
   
-  c. Add the value of "senderPort" to assign the smtp port number from which email service is getting used to send email.
+    c. Add the value of "senderPort" to assign the smtp port number from which email service is getting used to send email.
 
 2. If after adding valid credentials any error occur then enable your security login from your respective email id.
 
