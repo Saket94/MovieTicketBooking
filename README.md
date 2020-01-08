@@ -1,9 +1,8 @@
 # Project Name: MovieTicketBooking
 
 I had provided the entire MovieTicketBooking project to download with Sql server Script which contains tables, which are used in the preoject. 
-Display all the seats in the theater and allow users to book it by clicking it. Only one user should be allowed to reserved a specific seat.
-If another user clicks a seat that was booked, he should get an error. You must handle the concurrency scenarios and avoid data inconsistency.
-
+Displayed all the seats in the theater and allowed the users to book it by clicking it. Only one user wil be allowed to reserved a specific seat.
+If another user clicks a seat that was booked, he will get an error.
 
 ## Database Part:
 
