@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CinemaTicketBookingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblBooking">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="seat_Number" Type="int" />
+    <Property Name="cust_id" Type="int" />
+    <Property Name="status" Type="bit" />
+    <Property Name="passCode" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="tblCustomer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblSeat">
+    <Key>
+      <PropertyRef Name="Seat_Number" />
+    </Key>
+    <Property Name="Seat_Number" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__tblBookin__cust___3C69FB99">
+    <End Role="tblCustomer" Type="Self.tblCustomer" Multiplicity="0..1" />
+    <End Role="tblBooking" Type="Self.tblBooking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCustomer">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tblBooking">
+        <PropertyRef Name="cust_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblBookin__cust___3D5E1FD2">
+    <End Role="tblCustomer" Type="Self.tblCustomer" Multiplicity="0..1" />
+    <End Role="tblBooking" Type="Self.tblBooking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCustomer">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tblBooking">
+        <PropertyRef Name="cust_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblBookin__seat___3E52440B">
+    <End Role="tblSeat" Type="Self.tblSeat" Multiplicity="0..1" />
+    <End Role="tblBooking" Type="Self.tblBooking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSeat">
+        <PropertyRef Name="Seat_Number" />
+      </Principal>
+      <Dependent Role="tblBooking">
+        <PropertyRef Name="seat_Number" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblBookin__seat___3F466844">
+    <End Role="tblSeat" Type="Self.tblSeat" Multiplicity="0..1" />
+    <End Role="tblBooking" Type="Self.tblBooking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSeat">
+        <PropertyRef Name="Seat_Number" />
+      </Principal>
+      <Dependent Role="tblBooking">
+        <PropertyRef Name="seat_Number" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CinemaTicketBookingModelStoreContainer">
+    <EntitySet Name="tblBooking" EntityType="Self.tblBooking" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCustomer" EntityType="Self.tblCustomer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblSeat" EntityType="Self.tblSeat" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__tblBookin__cust___3C69FB99" Association="Self.FK__tblBookin__cust___3C69FB99">
+      <End Role="tblCustomer" EntitySet="tblCustomer" />
+      <End Role="tblBooking" EntitySet="tblBooking" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblBookin__cust___3D5E1FD2" Association="Self.FK__tblBookin__cust___3D5E1FD2">
+      <End Role="tblCustomer" EntitySet="tblCustomer" />
+      <End Role="tblBooking" EntitySet="tblBooking" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblBookin__seat___3E52440B" Association="Self.FK__tblBookin__seat___3E52440B">
+      <End Role="tblSeat" EntitySet="tblSeat" />
+      <End Role="tblBooking" EntitySet="tblBooking" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblBookin__seat___3F466844" Association="Self.FK__tblBookin__seat___3F466844">
+      <End Role="tblSeat" EntitySet="tblSeat" />
+      <End Role="tblBooking" EntitySet="tblBooking" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

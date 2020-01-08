@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CinemaTicketBookingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblBooking">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="seat_Number" Type="int" />
+          <Property Name="cust_id" Type="int" />
+          <Property Name="status" Type="bit" />
+          <Property Name="passCode" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="tblCustomer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblSeat">
+          <Key>
+            <PropertyRef Name="Seat_Number" />
+          </Key>
+          <Property Name="Seat_Number" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Status" Type="bit" Nullable="false" />
+          <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__tblBookin__cust___3C69FB99">
+          <End Role="tblCustomer" Type="Self.tblCustomer" Multiplicity="0..1" />
+          <End Role="tblBooking" Type="Self.tblBooking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCustomer">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tblBooking">
+              <PropertyRef Name="cust_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblBookin__cust___3D5E1FD2">
+          <End Role="tblCustomer" Type="Self.tblCustomer" Multiplicity="0..1" />
+          <End Role="tblBooking" Type="Self.tblBooking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCustomer">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tblBooking">
+              <PropertyRef Name="cust_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblBookin__seat___3E52440B">
+          <End Role="tblSeat" Type="Self.tblSeat" Multiplicity="0..1" />
+          <End Role="tblBooking" Type="Self.tblBooking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblSeat">
+              <PropertyRef Name="Seat_Number" />
+            </Principal>
+            <Dependent Role="tblBooking">
+              <PropertyRef Name="seat_Number" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblBookin__seat___3F466844">
+          <End Role="tblSeat" Type="Self.tblSeat" Multiplicity="0..1" />
+          <End Role="tblBooking" Type="Self.tblBooking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblSeat">
+              <PropertyRef Name="Seat_Number" />
+            </Principal>
+            <Dependent Role="tblBooking">
+              <PropertyRef Name="seat_Number" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CinemaTicketBookingModelStoreContainer">
+          <EntitySet Name="tblBooking" EntityType="Self.tblBooking" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCustomer" EntityType="Self.tblCustomer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblSeat" EntityType="Self.tblSeat" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__tblBookin__cust___3C69FB99" Association="Self.FK__tblBookin__cust___3C69FB99">
+            <End Role="tblCustomer" EntitySet="tblCustomer" />
+            <End Role="tblBooking" EntitySet="tblBooking" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblBookin__cust___3D5E1FD2" Association="Self.FK__tblBookin__cust___3D5E1FD2">
+            <End Role="tblCustomer" EntitySet="tblCustomer" />
+            <End Role="tblBooking" EntitySet="tblBooking" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblBookin__seat___3E52440B" Association="Self.FK__tblBookin__seat___3E52440B">
+            <End Role="tblSeat" EntitySet="tblSeat" />
+            <End Role="tblBooking" EntitySet="tblBooking" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblBookin__seat___3F466844" Association="Self.FK__tblBookin__seat___3F466844">
+            <End Role="tblSeat" EntitySet="tblSeat" />
+            <End Role="tblBooking" EntitySet="tblBooking" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CinemaTicketBookingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="CinemaTicketBookingEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblBookings" EntityType="CinemaTicketBookingModel.tblBooking" />
+          <EntitySet Name="tblCustomers" EntityType="CinemaTicketBookingModel.tblCustomer" />
+          <EntitySet Name="tblSeats" EntityType="CinemaTicketBookingModel.tblSeat" />
+          <AssociationSet Name="FK__booking__cust_id__3F466844" Association="CinemaTicketBookingModel.FK__booking__cust_id__3F466844">
+            <End Role="tblCustomer" EntitySet="tblCustomers" />
+            <End Role="tblBooking" EntitySet="tblBookings" />
+          </AssociationSet>
+          <AssociationSet Name="FK__booking__seat_Nu__3E52440B" Association="CinemaTicketBookingModel.FK__booking__seat_Nu__3E52440B">
+            <End Role="tblSeat" EntitySet="tblSeats" />
+            <End Role="tblBooking" EntitySet="tblBookings" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tblBooking">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="seat_Number" Type="Int32" />
+          <Property Name="cust_id" Type="Int32" />
+          <Property Name="status" Type="Boolean" />
+          <NavigationProperty Name="tblCustomer" Relationship="CinemaTicketBookingModel.FK__booking__cust_id__3F466844" FromRole="tblBooking" ToRole="tblCustomer" />
+          <NavigationProperty Name="tblSeat" Relationship="CinemaTicketBookingModel.FK__booking__seat_Nu__3E52440B" FromRole="tblBooking" ToRole="tblSeat" />
+          <Property Name="passCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblCustomer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tblBookings" Relationship="CinemaTicketBookingModel.FK__booking__cust_id__3F466844" FromRole="tblCustomer" ToRole="tblBooking" />
+        </EntityType>
+        <EntityType Name="tblSeat">
+          <Key>
+            <PropertyRef Name="Seat_Number" />
+          </Key>
+          <Property Name="Seat_Number" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="tblBookings" Relationship="CinemaTicketBookingModel.FK__booking__seat_Nu__3E52440B" FromRole="tblSeat" ToRole="tblBooking" />
+        </EntityType>
+        <Association Name="FK__booking__cust_id__3F466844">
+          <End Type="CinemaTicketBookingModel.tblCustomer" Role="tblCustomer" Multiplicity="0..1" />
+          <End Type="CinemaTicketBookingModel.tblBooking" Role="tblBooking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCustomer">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tblBooking">
+              <PropertyRef Name="cust_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__booking__seat_Nu__3E52440B">
+          <End Type="CinemaTicketBookingModel.tblSeat" Role="tblSeat" Multiplicity="0..1" />
+          <End Type="CinemaTicketBookingModel.tblBooking" Role="tblBooking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblSeat">
+              <PropertyRef Name="Seat_Number" />
+            </Principal>
+            <Dependent Role="tblBooking">
+              <PropertyRef Name="seat_Number" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CinemaTicketBookingModelStoreContainer" CdmEntityContainer="CinemaTicketBookingEntities">
+          <EntitySetMapping Name="tblBookings">
+            <EntityTypeMapping TypeName="CinemaTicketBookingModel.tblBooking">
+              <MappingFragment StoreEntitySet="tblBooking">
+                <ScalarProperty Name="passCode" ColumnName="passCode" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="cust_id" ColumnName="cust_id" />
+                <ScalarProperty Name="seat_Number" ColumnName="seat_Number" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCustomers">
+            <EntityTypeMapping TypeName="CinemaTicketBookingModel.tblCustomer">
+              <MappingFragment StoreEntitySet="tblCustomer">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblSeats">
+            <EntityTypeMapping TypeName="CinemaTicketBookingModel.tblSeat">
+              <MappingFragment StoreEntitySet="tblSeat">
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Seat_Number" ColumnName="Seat_Number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

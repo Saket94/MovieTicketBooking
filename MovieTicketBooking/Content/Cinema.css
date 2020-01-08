@@ -1,0 +1,114 @@
+﻿body {
+    margin: 10px;
+
+}
+
+
+.cinema-seats {
+    display: flex;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    width: 300px;
+    margin: 0 0 0 auto;
+    padding-top: 44px;
+}
+
+ .cinema-seats .seat {
+     cursor: pointer;
+ }
+
+ .cinema-seats .seat:hover:before {
+     content: '';
+     position: absolute;
+     top: 0;
+     width: 100%;
+     height: 100%;
+     background: rgba(0, 0, 0, 0.5);
+     border-radius: 7px;
+ }
+
+ .cinema-seats .seat.active:before {
+     content: '';
+     position: absolute;
+     top: 0;
+     width: 100%;
+     height: 100%;
+    
+     border-radius: 7px;
+ }
+
+.cinema-row {
+    /*transform: skew(-15deg);*/
+    margin: 0 4px;
+    width: 100%;
+    flex: 0 0 100%;
+    clear:both;
+    position:relative;
+}
+    .cinema-row::after {
+        content:'';
+        clear:both;
+        display:block;
+    }
+
+    .cinema-seats .cinema-row:first-child {
+        margin: 0 6px;
+    }
+
+.seat {
+    width: 35px;
+    height: 50px;
+    border-radius: 7px;
+    margin-bottom: 10px;
+    transform: skew(6deg);
+    margin-top: -28px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    margin-left: 10px;
+    float: left;
+}
+
+.cinema-row .seat:first-child {
+    margin-left:0;
+}
+
+.seat span {
+    font-size: 14px;
+    color: white;
+    margin: 10px;
+    font-weight: bold
+}
+
+.booked {
+
+    background: linear-gradient(to top, #761818, #761818, #761818, #761818, #761818, #B54041, #F3686A);
+}
+.available {
+    background: linear-gradient(to top, #0066cc 0%, #33ccff 100%);
+}
+.confirmed {
+    background: linear-gradient(to top, #336600 0%, #00cc00 100%);
+}
+
+.selected {
+    background: linear-gradient(to top, #ff9900 0%, #ffcc00 100%);
+}
+.descriptor {
+ padding:0;
+ margin:0 !important;
+}
+.bs-example {
+    margin: 20px;
+}
+.modal-dialog {
+width:315px;
+}
+
+
+@media (max-width:580px) {
+    .col-mfull {
+        width:100%
+    }
+    .cinema-seats {
+        margin:0;
+    }
+}

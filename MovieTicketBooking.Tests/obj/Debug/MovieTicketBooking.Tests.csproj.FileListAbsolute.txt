@@ -1,0 +1,120 @@
+C:\Users\cis\Source\Repos\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\cis\Source\Repos\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\cis\Source\Repos\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\cis\Source\Repos\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\MovieTicketBooking.Tests.dll.config
+C:\Users\cis\Source\Repos\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\MovieTicketBooking.Tests.dll
+C:\Users\cis\Source\Repos\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\MovieTicketBooking.Tests.pdb
+C:\Users\cis\Source\Repos\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\cis\Source\Repos\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\cis\Source\Repos\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\cis\Source\Repos\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\MovieTicketBooking.dll
+C:\Users\cis\Source\Repos\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\Newtonsoft.Json.dll
+C:\Users\cis\Source\Repos\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.Helpers.dll
+C:\Users\cis\Source\Repos\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.Mvc.dll
+C:\Users\cis\Source\Repos\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.Razor.dll
+C:\Users\cis\Source\Repos\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\cis\Source\Repos\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.WebPages.dll
+C:\Users\cis\Source\Repos\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\cis\Source\Repos\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.Optimization.dll
+C:\Users\cis\Source\Repos\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\EntityFramework.dll
+C:\Users\cis\Source\Repos\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\MovieTicketBooking.pdb
+C:\Users\cis\Source\Repos\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\MovieTicketBooking.dll.config
+C:\Users\cis\Source\Repos\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\cis\Source\Repos\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\cis\Source\Repos\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\Newtonsoft.Json.xml
+C:\Users\cis\Source\Repos\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.Helpers.xml
+C:\Users\cis\Source\Repos\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.Mvc.xml
+C:\Users\cis\Source\Repos\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.Razor.xml
+C:\Users\cis\Source\Repos\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.WebPages.xml
+C:\Users\cis\Source\Repos\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\cis\Source\Repos\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\cis\Source\Repos\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.Optimization.xml
+C:\Users\cis\Source\Repos\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\EntityFramework.xml
+C:\Users\cis\Source\Repos\MovieTicketBooking\MovieTicketBooking.Tests\obj\Debug\MovieTicketBooking.Tests.csprojAssemblyReference.cache
+C:\Users\cis\Source\Repos\MovieTicketBooking\MovieTicketBooking.Tests\obj\Debug\MovieTicketBooking.Tests.csproj.CoreCompileInputs.cache
+C:\Users\cis\Source\Repos\MovieTicketBooking\MovieTicketBooking.Tests\obj\Debug\MovieTicketBooking.Tests.csproj.CopyComplete
+C:\Users\cis\Source\Repos\MovieTicketBooking\MovieTicketBooking.Tests\obj\Debug\MovieTicketBooking.Tests.dll
+C:\Users\cis\Source\Repos\MovieTicketBooking\MovieTicketBooking.Tests\obj\Debug\MovieTicketBooking.Tests.pdb
+C:\Users\cis\Source\Repos\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\cis\Source\Repos\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\EntityFramework.SqlServer.xml
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\TestCases\BookingTestCases.xml
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\TestCases\CustomerTestCases.xml
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\MovieTicketBooking.Tests.dll.config
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\MovieTicketBooking.Tests.dll
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\MovieTicketBooking.Tests.pdb
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\EntityFramework.dll
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\EntityFramework.SqlServer.dll
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\MovieTicketBooking.dll
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\Newtonsoft.Json.dll
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.Helpers.dll
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.Mvc.dll
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.Razor.dll
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.WebPages.dll
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.WebPages.Razor.dll
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.Optimization.dll
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\MovieTicketBooking.pdb
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\MovieTicketBooking.dll.config
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\EntityFramework.xml
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\EntityFramework.SqlServer.xml
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\Newtonsoft.Json.xml
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.Helpers.xml
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.Mvc.xml
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.Razor.xml
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.WebPages.xml
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.WebPages.Razor.xml
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.Optimization.xml
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\obj\Debug\MovieTicketBooking.Tests.csprojAssemblyReference.cache
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\obj\Debug\MovieTicketBooking.Tests.csproj.CoreCompileInputs.cache
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\obj\Debug\MovieTicketBooking.Tests.csproj.CopyComplete
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\obj\Debug\MovieTicketBooking.Tests.dll
+D:\Indorse_Assignments\MovieTicketBooking\MovieTicketBooking\MovieTicketBooking.Tests\obj\Debug\MovieTicketBooking.Tests.pdb
+F:\VandanaPurohit\01 temp\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+F:\VandanaPurohit\01 temp\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+F:\VandanaPurohit\01 temp\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+F:\VandanaPurohit\01 temp\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\TestCases\BookingTestCases.xml
+F:\VandanaPurohit\01 temp\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\TestCases\CustomerTestCases.xml
+F:\VandanaPurohit\01 temp\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\MovieTicketBooking.Tests.dll.config
+F:\VandanaPurohit\01 temp\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\MovieTicketBooking.Tests.dll
+F:\VandanaPurohit\01 temp\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\MovieTicketBooking.Tests.pdb
+F:\VandanaPurohit\01 temp\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\EntityFramework.dll
+F:\VandanaPurohit\01 temp\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\EntityFramework.SqlServer.dll
+F:\VandanaPurohit\01 temp\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+F:\VandanaPurohit\01 temp\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+F:\VandanaPurohit\01 temp\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
+F:\VandanaPurohit\01 temp\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\MovieTicketBooking.dll
+F:\VandanaPurohit\01 temp\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\Newtonsoft.Json.dll
+F:\VandanaPurohit\01 temp\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.Helpers.dll
+F:\VandanaPurohit\01 temp\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.Mvc.dll
+F:\VandanaPurohit\01 temp\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.Razor.dll
+F:\VandanaPurohit\01 temp\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.WebPages.Deployment.dll
+F:\VandanaPurohit\01 temp\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.WebPages.dll
+F:\VandanaPurohit\01 temp\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.WebPages.Razor.dll
+F:\VandanaPurohit\01 temp\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.Optimization.dll
+F:\VandanaPurohit\01 temp\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\MovieTicketBooking.pdb
+F:\VandanaPurohit\01 temp\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\MovieTicketBooking.dll.config
+F:\VandanaPurohit\01 temp\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\EntityFramework.xml
+F:\VandanaPurohit\01 temp\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\EntityFramework.SqlServer.xml
+F:\VandanaPurohit\01 temp\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+F:\VandanaPurohit\01 temp\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+F:\VandanaPurohit\01 temp\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\Newtonsoft.Json.xml
+F:\VandanaPurohit\01 temp\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.Helpers.xml
+F:\VandanaPurohit\01 temp\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.Mvc.xml
+F:\VandanaPurohit\01 temp\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.Razor.xml
+F:\VandanaPurohit\01 temp\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.WebPages.xml
+F:\VandanaPurohit\01 temp\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
+F:\VandanaPurohit\01 temp\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.WebPages.Razor.xml
+F:\VandanaPurohit\01 temp\MovieTicketBooking\MovieTicketBooking.Tests\bin\Debug\System.Web.Optimization.xml
+F:\VandanaPurohit\01 temp\MovieTicketBooking\MovieTicketBooking.Tests\obj\Debug\MovieTicketBooking.Tests.csprojResolveAssemblyReference.cache
+F:\VandanaPurohit\01 temp\MovieTicketBooking\MovieTicketBooking.Tests\obj\Debug\MovieTicketBooking.Tests.csproj.CoreCompileInputs.cache
+F:\VandanaPurohit\01 temp\MovieTicketBooking\MovieTicketBooking.Tests\obj\Debug\MovieTicketBooking.Tests.dll
+F:\VandanaPurohit\01 temp\MovieTicketBooking\MovieTicketBooking.Tests\obj\Debug\MovieTicketBooking.Tests.pdb

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CinemaTicketBookingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="CinemaTicketBookingEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblBookings" EntityType="CinemaTicketBookingModel.tblBooking" />
+    <EntitySet Name="tblCustomers" EntityType="CinemaTicketBookingModel.tblCustomer" />
+    <EntitySet Name="tblSeats" EntityType="CinemaTicketBookingModel.tblSeat" />
+    <AssociationSet Name="FK__booking__cust_id__3F466844" Association="CinemaTicketBookingModel.FK__booking__cust_id__3F466844">
+      <End Role="tblCustomer" EntitySet="tblCustomers" />
+      <End Role="tblBooking" EntitySet="tblBookings" />
+    </AssociationSet>
+    <AssociationSet Name="FK__booking__seat_Nu__3E52440B" Association="CinemaTicketBookingModel.FK__booking__seat_Nu__3E52440B">
+      <End Role="tblSeat" EntitySet="tblSeats" />
+      <End Role="tblBooking" EntitySet="tblBookings" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="tblBooking">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="seat_Number" Type="Int32" />
+    <Property Name="cust_id" Type="Int32" />
+    <Property Name="status" Type="Boolean" />
+    <NavigationProperty Name="tblCustomer" Relationship="CinemaTicketBookingModel.FK__booking__cust_id__3F466844" FromRole="tblBooking" ToRole="tblCustomer" />
+    <NavigationProperty Name="tblSeat" Relationship="CinemaTicketBookingModel.FK__booking__seat_Nu__3E52440B" FromRole="tblBooking" ToRole="tblSeat" />
+    <Property Name="passCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblCustomer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FullName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblBookings" Relationship="CinemaTicketBookingModel.FK__booking__cust_id__3F466844" FromRole="tblCustomer" ToRole="tblBooking" />
+  </EntityType>
+  <EntityType Name="tblSeat">
+    <Key>
+      <PropertyRef Name="Seat_Number" />
+    </Key>
+    <Property Name="Seat_Number" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="tblBookings" Relationship="CinemaTicketBookingModel.FK__booking__seat_Nu__3E52440B" FromRole="tblSeat" ToRole="tblBooking" />
+  </EntityType>
+  <Association Name="FK__booking__cust_id__3F466844">
+    <End Type="CinemaTicketBookingModel.tblCustomer" Role="tblCustomer" Multiplicity="0..1" />
+    <End Type="CinemaTicketBookingModel.tblBooking" Role="tblBooking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCustomer">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tblBooking">
+        <PropertyRef Name="cust_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__booking__seat_Nu__3E52440B">
+    <End Type="CinemaTicketBookingModel.tblSeat" Role="tblSeat" Multiplicity="0..1" />
+    <End Type="CinemaTicketBookingModel.tblBooking" Role="tblBooking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSeat">
+        <PropertyRef Name="Seat_Number" />
+      </Principal>
+      <Dependent Role="tblBooking">
+        <PropertyRef Name="seat_Number" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

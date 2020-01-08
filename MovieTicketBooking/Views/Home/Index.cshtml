@@ -1,0 +1,431 @@
+﻿
+@model IEnumerable<MovieTicketBooking.Models.tblSeat>
+@{
+    ViewBag.Title = "Home Page";
+}
+@{
+    /*Variable Declaration for generating Seat rows*/
+    int itemToSkip = 0;
+    int itemToTake = 6;
+    var list = Model.ToList();
+    int rows = Model.Count() / 6;
+}
+
+<div class="row">
+    <div class="col-xs-6 col-sm-6 col-md-6 col-mfull">
+        <div class="cinema-seats">
+
+            @*Iterating rows to display seat rows*@
+            @for (int i = 1; i <= rows; i++)
+            {
+                <div class="cinema-row">
+                    @foreach (var d in list.Skip(itemToSkip).Take(itemToTake).ToList())
+                    {
+                        if (d.Status == true)
+                        {
+                            <div class="seat available" data-id='@d.Seat_Number' id='seat_@(d.Seat_Number)' onclick="selectSeat(@d.Seat_Number , this)"><span>@d.Seat_Number</span></div>
+                        }
+                        else
+                        {
+                            <div class="seat booked" data-id='@d.Seat_Number' id='seat_@(d.Seat_Number)' onclick="showBookedMsg()"><span>@d.Seat_Number</span></div>
+                        }
+                    }
+                </div>
+                itemToSkip = i * 6;
+            }
+        </div>
+    </div>
+
+    @*Info and book and Unbook controls*@
+    <div class="col-xs-6 col-sm-6 col-md-6 col-mfull">
+        <div class="descriptor">
+            <table border="0" style="">
+                <tr>
+                    <td>
+                        <div style="width:15px;height:15px" class="booked"></div>
+                    </td>
+                    <td>
+                        <p style="margin:15px; ">Booked</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div style="width:15px;height:15px" class="available"></div>
+                    </td>
+                    <td>
+                        <p style="margin:15px; ">Available</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div style="width:15px;height:15px" class="confirmed"></div>
+                    </td>
+                    <td>
+                        <p style="margin:15px; ">Confirmed</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <input type="button" style="height:35px;margin-top:20px" onclick="openBookingModal()" class="btn btn-success" value="Book Ticket" />
+        <input type="button" style="height:35px;margin-top:20px" onclick="openUnBookingModal()" class="btn btn-danger" value="Un-Book Ticket" />
+    </div>
+
+</div>
+
+@*Popup Modal for Booking*@
+<div id="bookingModal" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-warning text-dark">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title ">Confirmation</h4>
+            </div>
+            @using (Html.BeginForm("BookSeats", "Booking", FormMethod.Post, new { id = "bookingForm" }))
+            {
+                <input type="hidden" id="selectedSeatsHd" name="selectedSeatsHd" />
+                <div class="modal-body">
+
+                    <p id="txtSelectedSeat"></p>
+
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" class="form-control" id="txtFullName" name="txtFullName" placeholder="Full Name" autocomplete="off">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email1">Email address</label>
+                        <input type="email" class="form-control" id="txtEmail" name="txtEmail" aria-describedby="emailHelp" placeholder="Enter email" autocomplete="off">
+                        <small id="emailHelp" class="form-text text-muted">Your information is safe with us.</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Pass Code</label>
+                        <input type="text" class="form-control" id="txtPassCode" name="txtPassCode" placeholder="Pass Code" autocomplete="off">
+                        <small class="form-text text-muted"> (This code is used for un-booking.) </small>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="submit" id="btnConfirm" class="btn btn-success">Confirm</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@*Popup Modal for Un-Booking *@
+<div id="unBookingModal" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-warning text-dark">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title ">Un book your tickets</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="email1">Email address</label>
+                    <input type="email" class="form-control" id="txtUnBookingEmail" name="txtEmail" aria-describedby="emailHelp" placeholder="Enter email" autocomplete="off">
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-8">
+                        <label>Pass Code</label>
+                        <input type="text" class="form-control" id="txtConfirmPassCode" name="txtConfirmPassCode" placeholder="Pass Code">
+                    </div>
+                    <div class="col-md-4">
+                        <br />
+                        <button type="button" class="btn btn-primary" style="padding: 6px;height: 34px"
+                                onclick="getTicketDetails()">
+                            Get Tickets
+                        </button>
+                    </div>
+                    <div class="col-md-12">
+                        <small class="form-text text-muted"> (Please enter Pass Code to Un-book tickets which you received in an email after booking the tickets.) </small>
+                    </div>
+                </div>
+
+                <div class="form-group" style="padding:10px" id="bookedSeats">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="clearUnbooking()">Close</button>
+                <button type="submit" onclick="confirmUnbooking()" class="btn btn-success">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    /*selectedSeat array variable to store seats selected by user for booking*/
+    var selectedSeats = [];
+
+    /*CustID  variable to store customer Id which is used for unbooking in confirm unbooking operation*/
+    var CustID = 0;
+
+    /*Funtion for selecting seats on click of availale seats*/
+    function selectSeat(seatNo, seat) {
+        if ($(seat).hasClass("available")) {
+            selectedSeats.push(seatNo);
+            $(seat).removeClass("available").addClass("selected");
+        }
+        else if ($(seat).hasClass("booked")) {
+            const index = selectedSeats.indexOf(seatNo);
+            selectedSeats.splice(index, 1);
+            alertify.error("Seat already booked, Please select other seat.");
+        }
+        else {
+            const index = selectedSeats.indexOf(seatNo);
+            selectedSeats.splice(index, 1);
+            $(seat).removeClass("selected").addClass("available");
+        }
+    }
+
+    /*Funtion to open booking Modal*/
+    function openBookingModal() {
+        if (selectedSeats.length > 0) {
+            var randomstring = Math.random().toString(36).slice(-8);
+            $("#txtPassCode").val(randomstring);
+            var seats = "";
+            $.each(selectedSeats, function (index, value) {
+                seats += value + ",";
+            });
+            $("#selectedSeatsHd").val(seats.substring(0, seats.length - 1));
+            $("#txtSelectedSeat").html("You had selected seat number : <span class='badge badge-primary'> " + seats.substring(0, seats.length - 1) + "</span>");
+            $('#bookingModal').modal('show');
+        }
+        else {
+            alertify.warning("No Seats selected. Please select seats.")
+        }
+    }
+
+    /*Funtion to submit the booking details*/
+    $("#bookingForm").submit(function (e) {
+        if ($.trim($("#txtFullName").val()) === "") {
+            alertify.error("Please enter your name");
+            return false;
+        }
+        if (!(IsEmail($.trim($("#txtEmail").val())))) {
+            alertify.error("Please enter valid email");
+            return false;
+        }
+        if ($.trim($("#txtPassCode").val()) === "") {
+            alertify.error("Please enter a Pass Code");
+            return false;
+        }
+        else if ($.trim($("#txtPassCode").val()).length > 8) {
+            alertify.error("Length of Pass Code should be max 8 characters.");
+            return false;
+        }
+        e.preventDefault();
+        if ($(this).valid()) {
+            $.ajax({
+                type: "POST",
+                url: $(this).attr('action'),
+                data: $(this).serialize(),
+                success: function (res) {
+                    if (res.success == true) {
+                        $('#txtFullName').val("");
+                        $('#txtEmail').val("");
+                        $('#txtPassCode').val("");
+
+                        $('#bookingModal').modal('hide');
+
+                        var chkSelectedSeats = selectedSeats;
+                        $.each(chkSelectedSeats, function (index, value) {
+                            $("#seat_" + value).removeClass("selected").addClass("booked");
+                        });
+
+                        alertify.success(res.msg);
+                        selectedSeats = [];
+                    } else {
+                        alertify.error(res.msg);
+                    }
+                },
+                failure: function (response) {
+
+                    alertify.error(response.responseText);
+                },
+                error: function (response) {
+
+                    alertify.error(response.responseText);
+                }
+            });
+        }
+    });
+
+    /*Funtion to Show already booked warning Message when user clicks booked seat*/
+    function showBookedMsg() {
+        alertify.error("Seat already booked, Please select other seat.");
+    }
+
+    /*Funtion to Open Unbooking Modal popupl*/
+    function openUnBookingModal() {
+        $('#unBookingModal').modal('show');
+    }
+
+    /*Funtion to show List of seats booked by user in Un-Booking Modal*/
+    $('#slEmail').on("select2:select", function (e) {
+        var custId = $(e.currentTarget).find("option:selected").val();
+        CustID = custId;
+        $.ajax({
+            type: "GET",
+            url: "/Booking/GetBooking",
+            data: { custId: custId },
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                var container = $('#bookedSeats');
+                container.html('');
+                if (response.Result.length > 0) {
+                    $('<p />', { text: " You have booked foollowing Seats. " }).appendTo(container);
+                    $.each(response.Result, function (index, value) {
+                        if (index != 0) {
+                            $(container).append("<br/>");
+                        }
+                        $('<input />', { type: 'checkbox', id: 'chkSeat' + value.seatNumber, value: value.seatNumber }).appendTo(container);
+                        $('<label />', { text: "Seat Number :" + value.seatNumber }).appendTo(container);
+                        $("#chkSeat" + value.seatNumber).prop("checked", true);
+                    });
+
+                    $('<p />', { text: "Please un-check seat and confirm un-booking. " }).appendTo(container);
+                } else {
+                    $('<p />', { text: " No seats have been booked for you. " }).appendTo(container);
+                }
+            },
+            failure: function (response) {
+
+                alertify.error(response.responseText);
+            },
+            error: function (response) {
+
+                alertify.error(response.responseText);
+            }
+        });
+    })
+
+    /*Implementation of confirm of Unbooking of seats by user */
+    function confirmUnbooking() {
+        if ($.trim($("#txtConfirmPassCode").val()) === "") {
+            alertify.error("Please enter Pass Code.");
+            return false;
+        }
+
+        var unSelected = [];
+        $('div#bookedSeats input[type=checkbox]').each(function () {
+            if (!($(this).is(":checked"))) {
+                unSelected.push($(this).attr('value'));
+            }
+        });
+
+        if (unSelected.length > 0) {
+            $.ajax({
+                type: "POST",
+                url: "/Booking/Unbooking",
+                data: JSON.stringify({ custId: CustID, seats: unSelected, passCode: $.trim($("#txtConfirmPassCode").val()) }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    if (response.success) {
+                        $('#txtUnBookingEmail').val("");
+                        $('#txtConfirmPassCode').val("");
+                        CustID = 0;
+                        var container = $('#bookedSeats');
+                        container.html('');
+
+                        $('#unBookingModal').modal('hide');
+                        $.each(unSelected, function (index, value) {
+                            $("#seat_" + value).removeClass("booked").addClass("available");
+                        });
+                        alertify.success(response.msg);
+                    }
+                    else {
+                        alertify.error(response.msg);
+                    }
+                },
+                failure: function (response) {
+                    alertify.error(response.responseText);
+                },
+                error: function (response) {
+                    alertify.error(response.responseText);
+                }
+            });
+        }
+        else {
+            alertify.error("No seats to Un-Book. Please unselect seat to unbook. ");
+        }
+    }
+
+    /*Function to get the ticket details*/
+    function getTicketDetails() {
+        var custEmail = $("#txtUnBookingEmail").val();
+        var custPassCode = $("#txtConfirmPassCode").val();
+        $.ajax({
+            type: "GET",
+            url: "/Booking/GetBooking",
+            data: { custEmail: custEmail, custPassCode: custPassCode },
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                var container = $('#bookedSeats');
+                container.html('');
+                if (response.Result.length > 0) {
+
+                    $('<p />', { text: " You have booked foollowing Seats. " }).appendTo(container);
+                    $.each(response.Result, function (index, value) {
+                        if (CustID == 0) {
+                            CustID = value.custId;
+                        }
+                        if (index != 0) {
+                            $(container).append("<br/>");
+                        }
+                        $('<input />', { type: 'checkbox', id: 'chkSeat' + value.seatNumber, value: value.seatNumber }).appendTo(container);
+                        $('<label />', { text: "Seat Number :" + value.seatNumber }).appendTo(container);
+                        $("#chkSeat" + value.seatNumber).prop("checked", true);
+                    });
+
+                    $('<p />', { text: "Please un-check seat and confirm un-booking. " }).appendTo(container);
+                } else {
+                    $('<p />', { text: " No seats have been booked for you. " }).appendTo(container);
+                }
+            },
+            failure: function (response) {
+
+                alertify.error(response.responseText);
+            },
+            error: function (response) {
+
+                alertify.error(response.responseText);
+            }
+        });
+    }
+
+    /*Function to clear the un-booking details*/
+    function clearUnbooking() {
+        $('#txtUnBookingEmail').val("");
+        $('#txtConfirmPassCode').val("");
+        CustID = 0;
+        var container = $('#bookedSeats');
+        container.html('');
+    }
+
+    /*Function to clear the booking details*/
+    function clearBooking() {
+        $('#txtFullName').val("");
+        $('#txtEmail').val("");
+        $('#txtPassCode').val("");
+        var chkSelectedSeats = selectedSeats;
+        if (chkSelectedSeats.length > 0) {
+            $.each(chkSelectedSeats, function (index, value) {
+                const indexs = chkSelectedSeats.indexOf(value);
+                var seatId = "seat_" + value;
+                $("#" + seatId).removeClass("selected").addClass("available");
+
+            });
+            selectedSeats = [];
+        }
+        else {
+            alertify.warning("No Seats selected. Please select seats.")
+        }
+    }
+</script>

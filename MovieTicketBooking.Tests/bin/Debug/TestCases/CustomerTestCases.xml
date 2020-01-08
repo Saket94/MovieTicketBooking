@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CustomerData>
+  <tbl_Customer>
+    <CustomerID>1</CustomerID>
+    <CustomerEmail>saket.s@cisinlabs.com</CustomerEmail>
+  </tbl_Customer>
+  <tbl_Customer>
+    <CustomerID>2</CustomerID>
+    <CustomerEmail>saketsbjit@gmail.com</CustomerEmail>
+  </tbl_Customer>
+  <tbl_Customer>
+    <CustomerID>3</CustomerID>
+    <CustomerEmail>vandana.p@cisinlabs.com</CustomerEmail>
+  </tbl_Customer>
+</CustomerData>

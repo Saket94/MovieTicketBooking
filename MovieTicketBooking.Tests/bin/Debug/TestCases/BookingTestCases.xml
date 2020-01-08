@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CustomerData>
+  <tbl_Booking>
+    <CustomerSelectedSeatsHd>24,25</CustomerSelectedSeatsHd>
+    <CustomerFullName>Saket Singh</CustomerFullName>
+    <CustomerEmail>saket.s@cisinlabs.com</CustomerEmail>
+    <CustomerPassCode>19j396jn</CustomerPassCode>
+    <SeatNo>24</SeatNo>
+  </tbl_Booking>
+  <tbl_Booking>
+    <CustomerSelectedSeatsHd>26</CustomerSelectedSeatsHd>
+    <CustomerFullName>Vandana</CustomerFullName>
+    <CustomerEmail>vandana.p@cisinlabs.com</CustomerEmail>
+    <CustomerPassCode>21wr1p4v</CustomerPassCode>
+    <SeatNo>25</SeatNo>
+  </tbl_Booking>
+  <tbl_Booking>
+    <CustomerSelectedSeatsHd>27</CustomerSelectedSeatsHd>
+    <CustomerFullName>Saket Singh</CustomerFullName>
+    <CustomerEmail>saketsbjit@gmail.com</CustomerEmail>
+    <CustomerPassCode>595piwkx</CustomerPassCode>
+    <SeatNo>26</SeatNo>
+  </tbl_Booking>
+  <tbl_Booking>
+    <CustomerSelectedSeatsHd></CustomerSelectedSeatsHd>
+    <CustomerFullName></CustomerFullName>
+    <CustomerEmail></CustomerEmail>
+    <CustomerPassCode></CustomerPassCode>
+    <SeatNo>27</SeatNo>
+  </tbl_Booking>
+  <tbl_Booking>
+    <CustomerSelectedSeatsHd></CustomerSelectedSeatsHd>
+    <CustomerFullName></CustomerFullName>
+    <CustomerEmail></CustomerEmail>
+    <CustomerPassCode></CustomerPassCode>
+    <SeatNo>1</SeatNo>
+  </tbl_Booking>
+</CustomerData>
+
